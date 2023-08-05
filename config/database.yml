@@ -1,0 +1,23 @@
+defaults: &defaults
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: 5
+  min_messages: error
+
+development:
+  <<: *defaults
+  host: localhost
+  user: postgres
+  database: rails_contributors_development
+
+test:
+  <<: *defaults
+  host: localhost
+  user: postgres
+  database: rails_contributors_test
+
+staging:
+  <<: *defaults
+  host: localhost
+  user: postgres
+  database: rails_contributors_development
